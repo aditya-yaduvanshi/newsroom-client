@@ -47,7 +47,7 @@ export default function RootLayout({
           <div className="flex justify-between items-center text-sm py-1 max-w-[1110px] px-5 mx-auto text-secondary-light">
             <h2>#1 News worth to read.</h2>
             <ul className="flex justify-between items-center gap-5">
-              <li>Followed by 4.50+ million</li>
+              <li className="hidden">Followed by 4.50+ million</li>
               <li className="cursor-pointer">
                 <Icon icon={faTwitter} className="w-3 h-3" />
               </li>
@@ -62,17 +62,20 @@ export default function RootLayout({
           <div className="flex justify-between items-center px-5 bg-gradient-to-r from-primary via-primary-light to-primary py-2.5 max-w-[1110px] mx-auto">
             <Link
               href="/"
-              className="text-white text-5xl font-semibold tracking-widest cursor-pointer"
+              className="text-white text-lg lg:text-5xl font-semibold tracking-widest cursor-pointer"
             >
               Newzroom
             </Link>
-            <Button type="button" variant="tertiary" color="tertiary">
+            <Button type="button" variant="tertiary" color="tertiary" className="hidden lg:flex">
               <Icon icon={faEnvelope} className="w-4 h-4" /> Get the Free
               Newsletter
             </Button>
+            <Button type="button" variant="quarternary" color="none" className="lg:hidden text-white">
+              <Icon icon={faBars} className="w-4 h-4" />
+            </Button>
           </div>
         </header>
-        <nav className="bg-white border-b-4">
+        <nav className="bg-white border-b-4 hidden lg:block">
           <div className="max-w-[1110px] mx-auto flex items-center justify-between text-sm font-semibold tracking-wide">
             <ul className="flex items-center justify-between gap-2.5">
               {navlinks.map((navlink) => (
@@ -94,11 +97,11 @@ export default function RootLayout({
             </ul>
           </div>
         </nav>
-        <div className="flex justify-center items-center w-full p-5">
+        <div className="flex justify-center items-center p-5">
           <input
             type="image"
             src="/header-picture.png"
-            className="rounded hover:scale-105 transition-all duration-500"
+            className="rounded hover:scale-105 transition-all duration-500 w-full md:w-auto"
           />
         </div>
         <main className="bg-white border-b-4 py-5">{children}</main>

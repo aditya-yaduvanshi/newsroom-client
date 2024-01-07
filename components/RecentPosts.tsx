@@ -31,13 +31,13 @@ const RecentPosts = ({ posts = [] }: RecentPostsProps) => {
   };
 
   return (
-    <section className="col-span-3 p-5">
+    <section className="col-span-4 lg:col-span-3 p-5">
       <ul className="flex flex-col gap-2.5">
         {posts.slice(10 * (page - 1), page * 10)?.map((post) => (
-          <PostCard key={post._id} post={post} variant="primary" />
+          <PostCard key={post._id} post={post} variant="primary" className="rounded-lg border-b-4 py-5 sm:py-0 sm:border-none" />
         ))}
       </ul>
-      <div className="flex items-center justify-between p-5">
+      <div className="flex items-center justify-between py-5">
         <Button
           type="button"
           disabled={page === 1}

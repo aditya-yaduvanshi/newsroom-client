@@ -69,7 +69,7 @@ const PostCard = ({
   return (
     <>
       <li className={`grid grid-cols-3 gap-5 cursor-pointer ${className}`}>
-        <div className="col-span-1 rounded w-64 h-36 overflow-hidden">
+        <div className="col-span-3 sm:col-span-1 rounded h-36 overflow-hidden">
           <Image
             unoptimized
             src={primaryPost.thumbnail}
@@ -79,12 +79,12 @@ const PostCard = ({
             height="380"
           />
         </div>
-        <div className="col-span-2 flex flex-col gap-2.5">
+        <div className="col-span-3 sm:col-span-2 flex flex-col gap-2.5">
           <h4 className="text-lg font-bold text-quarternary hover:underline">
             {primaryPost.title}
           </h4>
-          <div className="flex items-center gap-5 text-xs font-medium">
-            <span className="inline-flex justify-center items-center gap-1">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-5 text-xs font-medium">
+            <span className="inline-flex sm:justify-center items-center gap-1">
               <Icon icon={faCalendar} className="w-3 h-3" />{" "}
               {primaryPost.publishedOn}
             </span>

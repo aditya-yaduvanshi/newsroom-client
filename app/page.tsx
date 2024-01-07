@@ -30,7 +30,7 @@ const Home = async () => {
   return (
     <div className="max-w-[1110px] mx-auto grid grid-cols-4 gap-2.5">
       <RecentPosts posts={recentPosts || []} />
-      <aside className="col-span-1 flex flex-col py-5 gap-10">
+      <aside className="hidden lg:col-span-1 lg:flex flex-col p-5 gap-10">
         <input
           type="image"
           src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEj3FoQihqw4ZMFjkpxjiO3A32TedWTfx5vLRYbQavUTE-jxdqzoMu23cnnikVuDvoKfUSXnmv5jL_fFqDYTcxwDdnScL4zeNZT1tbMRGYSiBJDYJgmLYwO17Em74D-k-gExJy7Xppj1qjM37wfOfEfmLlWopqVzcrvMJNrrFzzK2yhwAhEEU_sjiIUwOrAl/s300-rw-e30/wiz.png"
@@ -62,7 +62,7 @@ const Home = async () => {
           </ul>
         </div>
       </aside>
-      <section className="col-span-4 flex flex-col gap-5">
+      <section className="col-span-4 flex flex-col gap-5 p-5">
         <h3 className="relative py-2 tracking-wide text-lg text-quarternary font-semibold before:absolute before:w-5 before:h-[5px] before:bottom-0 after:w-24 after:h-[1px] after:left-0 after:bottom-0.5 after:absolute before:bg-quarternary after:bg-quarternary">
           Cybersecurity Resources
         </h3>
@@ -72,7 +72,7 @@ const Home = async () => {
               key={post._id}
               post={post}
               variant="tertiary"
-              className="col-span-1"
+              className="col-span-4 sm:col-span-2 lg:col-span-1 rounded-lg border-b-4 py-5 sm:py-0 sm:border-none"
             />
           ))}
         </ul>
