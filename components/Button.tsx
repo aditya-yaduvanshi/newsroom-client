@@ -18,7 +18,7 @@ const variantClass = {
 
 const colorClass = {
   primary: "bg-primary text-white",
-  secondary: "bg-secondary text-white",
+  secondary: "bg-[#195afe] hover:bg-[#00bfff] text-white",
   tertiary: "bg-tertiary text-[#4a380e]",
   none: "",
 };
