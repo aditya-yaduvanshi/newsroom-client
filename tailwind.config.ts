@@ -21,6 +21,9 @@ const config: Config = {
         tertiary: "#ffdb44",
         quarternary: "#092540",
       },
+      animation: {
+        'spin-slow': 'spin 2s linear infinite',
+      }
     },
   },
   plugins: [],
