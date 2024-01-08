@@ -1,6 +1,6 @@
 import React from "react";
 import { RECENT_POSTS_URL } from "@/consts/apis";
-import { POPULAR_POSTS, RESOURCES_POSTS, TRENDING_POSTS } from "@/consts/posts";
+import { POPULAR_POSTS, TRENDING_POSTS } from "@/consts/posts";
 import PostCard from "@/components/PostCard";
 import RecentPosts from "@/components/RecentPosts";
 import { Post } from "@/types";
@@ -62,22 +62,6 @@ const Home = async () => {
           </ul>
         </div>
       </aside>
-      <section className="col-span-4 flex flex-col gap-5 p-5">
-        <h3 className="relative py-2 tracking-wide text-lg text-quarternary font-semibold before:absolute before:w-5 before:h-[5px] before:bottom-0 after:w-24 after:h-[1px] after:left-0 after:bottom-0.5 after:absolute before:bg-quarternary after:bg-quarternary">
-          Cybersecurity Resources
-        </h3>
-        <ul className="grid grid-cols-4 gap-5">
-          {RESOURCES_POSTS.map((post) => (
-            <PostCard
-              key={post._id}
-              post={post}
-              variant="tertiary"
-              className="col-span-4 sm:col-span-2 lg:col-span-1 rounded-lg border-b-4 py-5 sm:py-0 sm:border-none"
-            />
-          ))}
-        </ul>
-      </section>
-      <section className="col-span-4 border">subscribe</section>
     </div>
   );
 };
