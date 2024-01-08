@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import { FontAwesomeIcon as Icon } from "@fortawesome/react-fontawesome";
 import {
   faChevronLeft,
@@ -18,15 +18,12 @@ const RecentPosts = ({ posts = [] }: RecentPostsProps) => {
   const pathname = usePathname();
   const router = useRouter();
   const searchParams = useSearchParams();
-  const [page, setPage] = useState(Number(searchParams.get("page") || 1));
+  const page = Number(searchParams.get("page") || 1);
 
   const handlePageChange = (inc: number) => {
     const query = new URLSearchParams(Array.from(searchParams.entries()));
-    setPage((prev) => {
-      const value = prev + inc;
-      query.set("page", value.toString());
-      return value;
-    });
+    const value = page + inc;
+    query.set("page", value.toString());
     router.push(`${pathname}?${query.toString()}`);
   };
 
@@ -34,7 +31,12 @@ const RecentPosts = ({ posts = [] }: RecentPostsProps) => {
     <section className="col-span-4 lg:col-span-3 p-5">
       <ul className="flex flex-col gap-2.5">
         {posts.slice(10 * (page - 1), page * 10)?.map((post) => (
-          <PostCard key={post._id} post={post} variant="primary" className="rounded-lg border-b-4 py-5 sm:py-0 sm:border-none" />
+          <PostCard
+            key={post._id}
+            post={post}
+            variant="primary"
+            className="rounded-lg border-b-4 py-5 sm:py-0 sm:border-none"
+          />
         ))}
       </ul>
       <div className="flex items-center justify-between py-5">
